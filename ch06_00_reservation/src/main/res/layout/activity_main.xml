@@ -15,11 +15,11 @@
         android:format="예약에 걸린 시간 %s 입니다"
         android:textSize="20dp"
         android:gravity="center"/>
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="예약 시작"/>
+<!--    <Button-->
+<!--        android:id="@+id/btnStart"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="예약 시작"/>-->
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -42,11 +42,18 @@
         android:layout_weight="1"
         >
 
-        <CalendarView
-            android:id="@+id/cv1"
-            android:layout_gravity="center"
+<!--        <CalendarView-->
+<!--            android:id="@+id/cv1"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+        <DatePicker
+            android:id="@+id/dp1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:datePickerMode="calendar"
+            android:layout_gravity="center"/>
+
         <TimePicker
             android:id="@+id/tp1"
             android:layout_width="wrap_content"
@@ -61,11 +68,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button
-            android:id="@+id/btnFinish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="예약완료"/>
+<!--        <Button-->
+<!--            android:id="@+id/btnFinish"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="예약완료"/>-->
 
         <TextView
             android:id="@+id/tvYear"

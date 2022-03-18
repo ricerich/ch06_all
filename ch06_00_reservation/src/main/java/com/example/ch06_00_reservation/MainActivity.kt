@@ -17,15 +17,16 @@ class MainActivity : AppCompatActivity()
         title = "예약 프로그램"
         
         var chrono = findViewById<Chronometer>(R.id.chrono1);
-        var btnStart = findViewById<Button>(R.id.btnStart);
+//        var btnStart = findViewById<Button>(R.id.btnStart);
 
         var rdoDate = findViewById<RadioButton>(R.id.rdoDate);
         var rdoTime = findViewById<RadioButton>(R.id.rdoTime);
 
-        var cv = findViewById<CalendarView>(R.id.cv1);
+//        var cv = findViewById<CalendarView>(R.id.cv1);
+        var dp = findViewById<DatePicker>(R.id.dp1)
         var tp = findViewById<TimePicker>(R.id.tp1);
 
-        var btnFinish = findViewById<Button>(R.id.btnFinish);
+//        var btnFinish = findViewById<Button>(R.id.btnFinish);
 
         var tvYear = findViewById<TextView>(R.id.tvYear);
         var tvMonth = findViewById<TextView>(R.id.tvMonth);
@@ -36,44 +37,83 @@ class MainActivity : AppCompatActivity()
 
         //onCreate()영역
         //처음 무조건 실행
-        cv.visibility = View.INVISIBLE
+//        cv.visibility = View.INVISIBLE
+        dp.visibility = View.INVISIBLE
         tp.visibility = View.INVISIBLE
+        rdoDate.visibility = View.INVISIBLE
+        rdoTime.visibility = View.INVISIBLE
 
-        var selectYear : Int = 0
-        var selectMonth : Int = 0
-        var selectDay : Int = 0
 
-        btnStart.setOnClickListener { 
+        //calendarView일때 필요
+//        var selectYear : Int = 0
+//        var selectMonth : Int = 0
+//        var selectDay : Int = 0
+
+//        btnStart.setOnClickListener {
+//            chrono.base = SystemClock.elapsedRealtime()//시간 초기화
+//            chrono.start()
+//            chrono.setTextColor(Color.RED)
+//        }
+
+        chrono.setOnClickListener {
             chrono.base = SystemClock.elapsedRealtime()//시간 초기화
             chrono.start()
             chrono.setTextColor(Color.RED)
+            rdoDate.visibility = View.VISIBLE
+            rdoTime.visibility = View.VISIBLE
         }
 
         rdoDate.setOnClickListener {
-            cv.visibility = View.VISIBLE
+//            cv.visibility = View.VISIBLE
+            dp.visibility = View.VISIBLE
             tp.visibility = View.INVISIBLE
         }
 
         rdoTime.setOnClickListener {
-            cv.visibility = View.INVISIBLE
+//            cv.visibility = View.INVISIBLE
+            dp.visibility = View.INVISIBLE
             tp.visibility = View.VISIBLE
         }
+//        //calendarView 처리용
+//        btnFinish.setOnClickListener {
+//        chrono.stop()
+//        chrono.setTextColor(Color.BLUE)
+//            //년,월,일 , 시,분 을
+//
+//            tvYear.text = selectYear.toString() //년
+//            tvMonth.text = selectMonth.toString()//월
+//            tvDay.text = selectDay.toString()//일
+//
+//            tvHour.text = tp.currentHour.toString()//시
+//            tvMinute.text = tp.currentMinute.toString()//분
+//        }
 
-        btnFinish.setOnClickListener {
-            //년,월,일 , 시,분 을
-            tvYear.text = selectYear.toString() //년
-            tvMonth.text = selectMonth.toString()//월
-            tvDay.text = selectDay.toString()//일
+        //datePicker 처리용
+        tvYear.setOnLongClickListener {
+
+            chrono.stop()
+            chrono.setTextColor(Color.BLUE)
+            //datePicker 처리용
+            tvYear.text = dp.year.toString() //년
+            tvMonth.text = dp.month.toString()//월
+            tvDay.text = dp.dayOfMonth.toString()//일
 
             tvHour.text = tp.currentHour.toString()//시
             tvMinute.text = tp.currentMinute.toString()//분
+
+            rdoDate.visibility = View.INVISIBLE
+            rdoTime.visibility = View.INVISIBLE
+            dp.visibility = View.INVISIBLE
+            tp.visibility = View.INVISIBLE
+
+            false
         }
 
-        cv.setOnDateChangeListener { calendarView, year, month, day ->
-            selectYear = year
-            selectMonth = month + 1
-            selectDay = day
-        }
+//        cv.setOnDateChangeListener { calendarView, year, month, day ->
+//            selectYear = year
+//            selectMonth = month + 1
+//            selectDay = day
+//        }
 
     }
 }
