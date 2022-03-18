@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Chronometer
+        android:id="@+id/chrono1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:format="예약에 걸린 시간 %s 입니다"
+        android:textSize="20dp"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="예약 시작"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdoDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="날짜설정(캘린더)"/>
+        <RadioButton
+            android:id="@+id/rdoTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시간설정(타임피커)"/>
+    </RadioGroup>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+
+        <CalendarView
+            android:id="@+id/cv1"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TimePicker
+            android:id="@+id/tp1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:timePickerMode="spinner"/>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="예약완료"/>
+
+        <TextView
+            android:id="@+id/tvYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="년"/>
+
+        <TextView
+            android:id="@+id/tvMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="월"/>
+        <TextView
+            android:id="@+id/tvDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일"/>
+        <TextView
+            android:id="@+id/tvHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시"/>
+        <TextView
+            android:id="@+id/tvMinute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="분 예약됨"/>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

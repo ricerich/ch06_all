@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "ch06_all"
+include ':app'
+include ':ch06_01_viewfipper'
+include ':ch06_02_tabhost'
+include ':ch06_03_actionbar_fragment'
+include ':ch06_00_reservation'
+include ':ch06_00_auto_complete'
