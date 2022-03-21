@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         //1.웹뷰클라이언트를 만든다!
         //2.웹뷰클라이언트를 웹뷰에 꽂는다!
 
-
         //1.웹뷰클라이언트를 만든다!
         class MyWebViewClient : WebViewClient()
         {
@@ -35,8 +34,6 @@ class MainActivity : AppCompatActivity() {
 
         //2.웹뷰클라이언트를 웹뷰에 꽂는다!
         webView1.webViewClient = webViewClient1
-
-
 
         btn1.setOnClickListener {
             //edt1.text
